@@ -50,7 +50,7 @@ namespace Origin_Cache_Cleaner
                 var szDirAppDataRoaming = new DirectoryInfo(szWindowsAppDataRoaming);
 
                 // --| If somehow the Origin Cache folder is non-existant, throw an error
-                if (!szDir.Exists)
+                if(!szDir.Exists)
                 {
                     MessageBox.Show("Origin Cache folder does not exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -84,7 +84,7 @@ namespace Origin_Cache_Cleaner
                 {
                     try
                     {
-                        // --| Ignore LocalContent folder. We don't want to delete this as per Origin guidance
+                        // --| Find and delete the Origin folder only
                         if(dir1.ToString() == "Origin")
                         {
                             // --| Delete Origin folder
@@ -102,7 +102,7 @@ namespace Origin_Cache_Cleaner
                 {
                     try
                     {
-                        // --| Ignore LocalContent folder. We don't want to delete this as per Origin guidance
+                        // --| Find and delete the Origin folder only
                         if(dir2.ToString() == "Origin")
                         {
                             // --| Delete Origin folder
